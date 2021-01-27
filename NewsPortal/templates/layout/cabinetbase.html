@@ -22,32 +22,32 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 <body>
 <div class="cabinet">
-    <div class="cabinet__mask">
-        <div class="cabinet__bg"
-             style="background: url('{% static 'img/cabinet/bg-cabinet.jpg' %}') center no-repeat; width: 100%;min-height: 100vh;height: 100%;background-size: cover;">
-            {#        <img src="{% static 'img/cabinet/bg-cabinet.jpg' %}" alt="" class="cabinet__img">#}
-        </div>
+
+    <div class="cabinet__bg"
+         style="background: url('{% static 'img/cabinet/bg-cabinet.jpg' %}') center no-repeat;
+                 width: 100%;min-height: 100vh;
+                 height: 100%;background-size: cover;
+                 position: absolute;top: 0;left: 0;z-index: -1;">
     </div>
-    <div class="container">
-        <div class="cabinet__inner">
+    <div class="cabinet__inner">
 
-            <div class="cabinet__header">
-                <div class="cabinet__logo">Jatal</div>
-                <nav class="cabinet__nav">
-                    <a href="#" class="cabinet__link">Personal Data</a>
-                    <a href="#" class="cabinet__link">Write Post</a>
-                    <a href="#" class="cabinet__link">All posts</a>
-                    <a href="#" class="cabinet__link">Back home</a>
-                </nav>
-            </div>
-
-            {% block cabinet %}
-            {% endblock %}
-
+        <div class="cabinet__header">
+            <div class="cabinet__logo">Jatal</div>
+            <nav class="cabinet__nav">
+                <a href="#" class="cabinet__link">Personal Data</a>
+                <a href="#" class="cabinet__link">Write Post</a>
+                <a href="#" class="cabinet__link">All posts</a>
+                <a href="#" class="cabinet__link">Back home</a>
+            </nav>
         </div>
+
+        {% block cabinet %}
+        {% endblock %}
+
     </div>
 </div>
 

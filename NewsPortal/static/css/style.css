@@ -2817,9 +2817,6 @@ ul {
 }
 
 .cabinet__inner {
-    position: absolute;
-    top: 0;
-    left: 0;
     z-index: 100;
     width: 100%;
     display: flex;
@@ -3159,6 +3156,7 @@ ul {
 .pers__allpost-subtitle {
     font-size: 25px;
     color: #645F5F;
+    text-align: center;
     font-family: 'La Belle Aurore', sans-serif;
 }
 
@@ -3174,6 +3172,7 @@ ul {
     margin: 0 auto 10px;
     padding: 20px 10px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border: 1px solid #9E9999;
     background: #FCFBFB;
@@ -3184,6 +3183,40 @@ ul {
     font-size: 25px;
     color: black;
 }
+
+@media (max-width: 860px) {
+    .allpost__item {
+        width: 90%;
+    }
+
+    .allpost__title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .allpost__item {
+        width: 95%;
+    }
+
+    .allpost__title {
+        font-size: 18px;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+    .allpost__item {
+        width: 100%;
+    }
+
+    .allpost__title {
+        font-size: 16px;
+    }
+
+}
+
 
 .allpost__btn {
     padding: 8px 28px;
@@ -3315,6 +3348,7 @@ ul {
     flex-direction: column;
 }
 
+
 .photo__info-title {
     font-size: 25px;
     color: black;
@@ -3334,6 +3368,39 @@ ul {
     font-size: 16px;
     border: 0;
 }
+
+@media (max-width: 910px) {
+    .write__photo {
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .write__photo-info {
+        width: 100%;
+        order: 1;
+    }
+
+    .write__photo-block {
+        width: 100%;
+        order: 2;
+    }
+
+    .photo__info-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 430px) {
+    .write__inf {
+        width: 90%;
+    }
+
+    .write__content {
+        width: 100%;
+    }
+}
+
 
 .write__select {
     width: 100%;
