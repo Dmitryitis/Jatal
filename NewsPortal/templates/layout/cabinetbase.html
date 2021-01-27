@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow, noodp">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Quattrocento&family=Roboto:wght@300;400;700&family=Fira+Sans:ital,wght@0,300;1,300&family=Tenali+Ramakrishna&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+{% include 'sprite/sprite.html' %}
+
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+
+            <a href="#" class="burger" id="burger">
+                <svg class="burger__logo">
+                    <use xlink:href="#burger"></use>
+                </svg>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="#" class="nav__link wow fadeInLeft">Home</a>
+                <a href="#" class="nav__link wow fadeInLeft">All post</a>
+                <div class="nav__link--logo wow fadeInDown">Jatal</div>
+                <a href="#" class="nav__link wow fadeInRight">About</a>
+                <a href="#" class="nav__link wow fadeInRight">Contacts</a>
+            </nav>
+
+            <div class="header__logo">Jatal</div>
+            <!--            <h1>dfsdfs</h1>-->
+            {#            <a href="#" class="header__auth-text help-text active">Personal cabinet</a>#}
+            {#            <a href="#" class="header__auth active" id="logout">#}
+            {#                <svg class="header__auth-logo">#}
+            {#                    <use xlink:href="#logout"></use>#}
+            {#                </svg>#}
+            {#                <div class="header__auth-text">Logout</div>#}
+            {#            </a>#}
+
+            <a h

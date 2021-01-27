@@ -1,0 +1,55 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="posts">
+        <div class="container">
+            <div class="posts__inner">
+                <div class="posts__content">
+                    <div class="error_search">Error</div>
+                    <div class="posts__item wow fadeInUp">
+                        <div class="posts__photo">
+                            <a href="#">
+                                <img src="{% static 'img/about/castle.jpg' %}" alt="" class="posts__img"></a>
+                        </div>
+                        <div class="posts__item-content">
+                            <p><a href="#" class="posts__title posts__title--underline">Lorem ipsum dolor sit amet.</a>
+                            </p>
+
+                            <div class="posts__info">
+                                <div class="posts__topic">Lorem ipsum.</div>
+                                <div class="posts__date">202020</div>
+                                <div class="posts__name">Jenny Preston</div>
+                                <div class="posts__comments">10 comments</div>
+                                <div class="posts__views">fff</div>
+                            </div>
+
+                            <div class="posts__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus
+                                dignissimos dolore ea eius facere fugit, illo, impedit molestias nemo quis repellat
+                                sequi
+                                sunt voluptatem! Ipsa laborum maxime omnis placeat soluta vero voluptate voluptatibus.
+                                Animi
+                                consequuntur debitis exercitationem id libero nostrum numquam pariatur perferendis,
+                                perspiciatis quas quo ratione sed, suscipit, temporibus.
+                            </div>
+                            <label class="mb">
+                                <a class="posts__btn" href="#">Read More</a>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <form action="" autocomplete="off" method="post" class="posts__search-system"
+                      id="post">
+
+                    <div class="posts__category">
+                        <div class="posts__category-title">Categories</div>
+                        <div class="posts__category-line"></div>
+                    </div>
+
+                    <select name="select-box" id="selectId" class="select">
+                        <option value="" name="val">Select category...</option>
+                        <option value="Sport" name="val">Sport</option>
+                        <option value="Politics" name="val">Politics</option>
+                        <option value="Travel" name="val"
