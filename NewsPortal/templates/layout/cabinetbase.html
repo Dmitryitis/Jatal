@@ -17,39 +17,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
-{% include 'sprite/sprite.html' %}
-
-<header class="header">
+<div class="cabinet">
+    <div class="cabinet__mask">
+        <div class="cabinet__bg"
+             style="background: url('{% static 'img/cabinet/bg-cabinet.jpg' %}') center no-repeat; width: 100%;min-height: 100vh;height: 100%;background-size: cover;">
+            {#        <img src="{% static 'img/cabinet/bg-cabinet.jpg' %}" alt="" class="cabinet__img">#}
+        </div>
+    </div>
     <div class="container">
-        <div class="header__inner">
+        <div class="cabinet__inner">
 
-            <a href="#" class="burger" id="burger">
-                <svg class="burger__logo">
-                    <use xlink:href="#burger"></use>
-                </svg>
-            </a>
+            <div class="cabinet__header">
+                <div class="cabinet__logo">Jatal</div>
+                <nav class="cabinet__nav">
+                    <a href="#" class="cabinet__link">Personal Data</a>
+                    <a href="#" class="cabinet__link">Write Post</a>
+                    <a href="#" class="cabinet__link">All posts</a>
+                    <a href="#" class="cabinet__link">Back home</a>
+                </nav>
+            </div>
 
-            <nav class="nav" id="nav">
-                <a href="#" class="nav__link wow fadeInLeft">Home</a>
-                <a href="#" class="nav__link wow fadeInLeft">All post</a>
-                <div class="nav__link--logo wow fadeInDown">Jatal</div>
-                <a href="#" class="nav__link wow fadeInRight">About</a>
-                <a href="#" class="nav__link wow fadeInRight">Contacts</a>
-            </nav>
+            {% block cabinet %}
+            {% endblock %}
 
-            <div class="header__logo">Jatal</div>
-            <!--            <h1>dfsdfs</h1>-->
-            {#            <a href="#" class="header__auth-text help-text active">Personal cabinet</a>#}
-            {#            <a href="#" class="header__auth active" id="logout">#}
-            {#                <svg class="header__auth-logo">#}
-            {#                    <use xlink:href="#logout"></use>#}
-            {#                </svg>#}
-            {#                <div class="header__auth-text">Logout</div>#}
-            {#            </a>#}
+        </div>
+    </div>
+</div>
 
-            <a h
+</body>
+</html>

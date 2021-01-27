@@ -1,103 +1,74 @@
-$(function () {
+function autocomplete(inp, arr) {
+    var currentFocus;
+    console.log(inp);
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        this.parentNode.appendChild(a);
 
-    //Preloader
-    var body = $('body');
-    $(window).on('load', function () {
-        body.addClass('loaded_hiding');
-
-        window.setTimeout(function () {
-            body.addClass('loaded');
-            body.removeClass('loaded_hiding');
-        }, 1500);
-    });
-
-    //Burger
-    $("#burger").on("click", function (event) {
-        event.preventDefault();
-
-        $("#nav").toggleClass("see-nav");
-
-    });
-
-    //Slider
-    const intro = $("#intro");
-
-    intro.slick({
-        infinite: true,
-        speed: 800,
-        dots: false,
-        autoplay: true,
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    });
-
-    $("#intro__arrow--prev").on("click", function (event) {
-        event.preventDefault();
-
-        intro.slick('slickPrev');
-    });
-
-    $("#intro__arrow--next").on("click", function (event) {
-        event.preventDefault();
-
-        intro.slick('slickNext');
-    });
-
-    //Select
-    $(".select").each(function () {
-
-        var $this = $(this),
-            selectOption = $this.find('option'),
-            selectOptionLenght = selectOption.length,
-            selectedOption = selectOption.filter(':selected'),
-            dur = 500;
-
-        $this.hide();
-
-        $this.wrap('<div class="select"></div>');
-        $('<div>', {
-            class: 'select__gap',
-            text: 'Select category...'
-        }).insertAfter($this);
-
-        var selectGap = $this.next('.select__gap'),
-            caret = selectGap.find('.caret');
-
-        $('<ul>', {
-            class: 'select__list'
-        }).insertAfter(selectGap);
-
-        var selectList = selectGap.next('.select__list');
-
-        for (var i = 0; i < selectOptionLenght; i++) {
-            $('<li>', {
-                class: 'select__item',
-                html: $('<span>', {
-                    text: selectOption.eq(i).text()
-                })
-            }).attr('data-value', selectOption.eq(i).val()).appendTo(selectList);
-        }
-
-        var selectItem = selectList.find('li');
-
-        selectList.slideUp(0);
-
-        selectGap.on('click', function () {
-
-            if (!$(this).hasClass('on')) {
-                $(this).addClass('on');
-                selectList.slideDown(dur);
-
-                selectItem.on('click', function () {
-                    var chooseItem = $(this).data('value');
-
-                    $('select').val(chooseItem).attr('selected', 'selected');
-                    selectGap.text($(this).find('span').text());
-
-                    selectList.slideUp(dur);
-                    selectGap.removeClass('on');
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i].substr(0, val.length).toUpperCase() === val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
                 });
-            } else {
-                $(this).removeClass('on');
-          
+                a.appendChild(b);
+            }
+        }
+    });
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode === 40) {
+            currentFocus++;
+            addActive(x);
+        } else if (e.keyCode === 38) {
+            currentFocus--;
+            addActive(x);
+        } else if (e.keyCode === 13) {
+
+            e.preventDefault();
+            if (currentFocus > -1) {
+
+                if (x) x[currentFocus].click();
+            }
+        }
+    });
+    function addActive(x) {
+
+        if (!x) return false;
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = (x.length - 1);
+        x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+        for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+        }
+    }
+    function closeAllLists(elmnt) {
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+            if (elmnt !== x[i] && elmnt !== inp) {
+                x[i].parentNode.removeChild(x[i]);
+            }
+        }
+    }
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+}
+
+var programs = ["Sport", "Politics", "Travel", "Scientific populism", "Marketing", "Weather", "Rest", "Health", "About people", "Business","Books","Programming","Shops","News","Technologies"];
+
+autocomplete(document.getElementById("search"), programs);

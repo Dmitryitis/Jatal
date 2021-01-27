@@ -1,39 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index, follow, noodp">
-    <meta name="googlebot" content="index, follow">
-    <meta name="google" content="notranslate">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Quattrocento&family=Roboto:wght@300;400;700&family=Fira+Sans:ital,wght@0,300;1,300&family=Tenali+Ramakrishna&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+{% extends 'layout/cabinetbase.html' %}
+{% load static %}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+{% block cabinet %}
+<div class="cabinet__content">
+    <div class="cabinet__content-header">
+        <div class="profile">
+            <div class="profile__photo">
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+                <img src="{% static 'img/comments/prof.jpeg' %}" alt="" class="cabin__img">
+            </div>
+        </div>
 
-<div class="cabinet">
-    <div class="cabinet__bg allpost-bg">
-        <img src="img/cabinet/bg-cabinet.jpg" alt="" class="cabinet__img">
+        <div class="profile__content-info">
+            <div class="info__title">Personal Information</div>
+            <div class="info__subtitle">you attract what's inside you</div>
+        </div>
     </div>
-    <div class="container">
-        <div class="cabinet__inner">
 
-            <div class="cabinet__header">
-                <div class="cabinet__logo">Jatal</div>
-                <nav class="cabinet__nav">
-                    <a href="#" class="cabinet__link">Personal Data</a>
-                    <a href="#" class="cabinet__link">Write Post</a>
-           
+    <form action="" method="get" class="personal__info">
+        <div class="personal__info-item">
+            <div class="personal__info-inner">
+                <label class="personal__info-name">Name</label>
+                <div class="personal__info-fieldname">Lorem</div>
+
+            </div>
+            <div class="personal__info-inner">
+                <label class="personal__info-name">Surname</label>
+                <div class="personal__info-fieldname">Ipson</div>
+            </div>
+        </div>
+
+        <div class="personal__info-item">
+            <div class="personal__info-inner">
+                <label class="personal__info-name">Email</label>
+                <div class="personal__info-fieldname">sdfsf@mail.ru</div>
+            </div>
+            <div class="personal__info-inner">
+                <label class="personal__info-name">About</label>
+                <div class="personal__info-text redact__info-text">Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Illo, quae!
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-pers">
+            <button type="submit" class="personal__save">Редактировать</button>
+        </div>
+
+    </form>
+
+</div>
+{% endblock %}

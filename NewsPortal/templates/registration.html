@@ -1,38 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index, follow, noodp">
-    <meta name="googlebot" content="index, follow">
-    <meta name="google" content="notranslate">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Quattrocento&family=Roboto:wght@300;400;700&family=Fira+Sans:ital,wght@0,300;1,300&family=Tenali+Ramakrishna&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+{% extends 'layout/loginbase.html' %}
+{% load static %}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+{% block content %}
+    <div class="login">
+        <div style="background: url('{% static 'img/login/loin-bg.jpg' %}') center no-repeat;width: 100%;height: 100vh;background-size: cover;"></div>
 
-<div class="cabinet">
-    <div class="cabinet__bg">
-        <img src="img/cabinet/bg-cabinet.jpg" alt="" class="cabinet__img">
+        <div class="login__inner">
+            <div class="auth__title">Welcome to Jatal</div>
+
+            <form action="#" method="post" class="auth__auth">
+                <div class="auth__item">
+                    <label for="email">Email Address or Username</label>
+                    <input type="text" id="email" class="auth__email" name="username"
+                           required>
+                </div>
+
+                <div class="auth__item">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="auth__email"
+                           required name="password">
+                </div>
+                <div class="auth__item">
+                    <label for="rep_password">Repeat password</label>
+                    <input type="password" id="rep_password" class="auth__email"
+                           required name="repeat_password">
+                </div>
+                <div class="auth__item auth__item-remem">
+{#                    <div class="auth__remember">#}
+{#                        <input type="checkbox" id="cookie" name="cookie" class="auth__check">#}
+{#                        <div class="auth__remember-text">Запомнить меня</div>#}
+{#                    </div>#}
+                    <div class="auth__create">
+                        <button type="submit" class="auth__btn">Registration</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
-    <div class="container">
-        <div class="cabinet__inner">
-
-            <div class="cabinet__header">
-                <div class="cabinet__logo">Jatal</div>
-                <nav class="cabinet__nav">
-                    <a href="#" class="cabinet__link">Personal Data</a>
-                    <a href="#" class="ca
+{% endblock %}

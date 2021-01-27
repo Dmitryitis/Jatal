@@ -1,129 +1,87 @@
-/*!
-  * Bootstrap util.js v4.5.0 (https://getbootstrap.com/)
-  * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-  */
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('jquery')) :
-  typeof define === 'function' && define.amd ? define(['jquery'], factory) :
-  (global = global || self, global.Util = factory(global.jQuery));
-}(this, (function ($) { 'use strict';
+{% extends 'layout/base.html' %}
+{% load static %}
 
-  $ = $ && Object.prototype.hasOwnProperty.call($, 'default') ? $['default'] : $;
+<!--<div class="preloader">-->
+<!--    <svg class="preloader__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">-->
+<!--        <path fill="currentColor"-->
+<!--              d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">-->
+<!--        </path>-->
+<!--    </svg>-->
 
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.5.0): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-  /**
-   * ------------------------------------------------------------------------
-   * Private TransitionEnd Helpers
-   * ------------------------------------------------------------------------
-   */
-
-  var TRANSITION_END = 'transitionend';
-  var MAX_UID = 1000000;
-  var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
-
-  function toType(obj) {
-    if (obj === null || typeof obj === 'undefined') {
-      return "" + obj;
-    }
-
-    return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
-  }
-
-  function getSpecialTransitionEndEvent() {
-    return {
-      bindType: TRANSITION_END,
-      delegateType: TRANSITION_END,
-      handle: function handle(event) {
-        if ($(event.target).is(this)) {
-          return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
-        }
-
-        return undefined;
-      }
-    };
-  }
-
-  function transitionEndEmulator(duration) {
-    var _this = this;
-
-    var called = false;
-    $(this).one(Util.TRANSITION_END, function () {
-      called = true;
-    });
-    setTimeout(function () {
-      if (!called) {
-        Util.triggerTransitionEnd(_this);
-      }
-    }, duration);
-    return this;
-  }
-
-  function setTransitionEndSupport() {
-    $.fn.emulateTransitionEnd = transitionEndEmulator;
-    $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
-  }
-  /**
-   * --------------------------------------------------------------------------
-   * Public Util Api
-   * --------------------------------------------------------------------------
-   */
+<!--</div>-->
 
 
-  var Util = {
-    TRANSITION_END: 'bsTransitionEnd',
-    getUID: function getUID(prefix) {
-      do {
-        // eslint-disable-next-line no-bitwise
-        prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
-      } while (document.getElementById(prefix));
+{% block content %}
+    <div class="about__intro">
+        <div class="about__bg">
+            <img src="{% static 'img/about/title.jpg' %}" alt="" class="about__img">
+            <div class="about__title-info">
+                <div class="about__title wow fadeInDown">About us</div>
+                <div class="about__subtitle wow fadeInUp">why are we</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="about__inner">
+                <div class="about__header">
+                    <div class="about__line"></div>
+                    <div class="about__header-title">Why are you here</div>
+                    <div class="about__line"></div>
+                </div>
 
-      return prefix;
-    },
-    getSelectorFromElement: function getSelectorFromElement(element) {
-      var selector = element.getAttribute('data-target');
+                <div class="about__content">
+                    <div class="about__item-bg">
+                        <img src="{% static 'img/about/post-2-copyright.jpg' %}" alt="" class="item-bg">
+                        <div class="about__item-bg-text">New skills that will help and reveal you</div>
+                    </div>
+                    <div class="about__items">
+                        <div class="about__item-sm">
+                            <img src="{% static 'img/about/photograph.jpg' %}" alt="" class="item-sm">
+                            <div class="about__item-sm-text">Worlds you didn't even know existed</div>
+                        </div>
+                        <div class="about__item-sm">
+                            <img src="{% static 'img/about/machina.jpg' %}" alt="" class="item-sm">
+                            <div class="about__item-sm-text">New experience and knowledge</div>
+                        </div>
+                    </div>
+                </div>
 
-      if (!selector || selector === '#') {
-        var hrefAttr = element.getAttribute('href');
-        selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
-      }
+                <div class="about__content about__content-new">
+                    <div class="about__item-bg">
+                        <img src="{% static 'img/about/twopeople.jpg' %}" alt="" class="item-bg">
+                        <div class="about__item-bg-text">Dating and thoughts with like-minded people</div>
+                    </div>
+                    <div class="about__items">
+                        <div class="about__item-sm">
+                            <img src="{% static 'img/about/girl.jpg' %}" alt="" class="item-sm">
+                            <div class="about__item-sm-text">Eternal and unforgettable stories</div>
+                        </div>
+                        <div class="about__item-sm">
+                            <img src="{% static 'img/about/meet.jpg' %}" alt="" class="item-sm">
+                            <div class="about__item-sm-text">Find a new self</div>
+                        </div>
+                    </div>
+                </div>
 
-      try {
-        return document.querySelector(selector) ? selector : null;
-      } catch (err) {
-        return null;
-      }
-    },
-    getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
-      if (!element) {
-        return 0;
-      } // Get transition-duration of the element
+                <div class="about__video">
+                    <div class="video__inner">
+                        <video class="video" src="{% static 'img/video/coverr--07-20-friends-at-sunset-25-5167.mp4' %}"
+                               muted
+                               loop
+                               autoplay></video>
+                    </div>
 
+                    <div class="video__content">
+                        <div class="video__info">
+                            <div class="video__title wow fadeInDown">Jatal</div>
+                            <div class="video__text wow fadeInLeft">it's time to write your own story</div>
 
-      var transitionDuration = $(element).css('transition-duration');
-      var transitionDelay = $(element).css('transition-delay');
-      var floatTransitionDuration = parseFloat(transitionDuration);
-      var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
+                            <a href="#" class="video__button wow fadeInRight">Write post</a>
 
-      if (!floatTransitionDuration && !floatTransitionDelay) {
-        return 0;
-      } // If multiple durations are defined, take the first
+                        </div>
+                    </div>
+                </div>
 
-
-      transitionDuration = transitionDuration.split(',')[0];
-      transitionDelay = transitionDelay.split(',')[0];
-      return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
-    },
-    reflow: function reflow(element) {
-      return element.offsetHeight;
-    },
-    triggerTransitionEnd: function triggerTransitionEnd(element) {
-      $(element).trigger(TRANSITION_END);
-    },
-    // TODO: Remove in v5
-    supportsTransitionEnd: function s
+            </div>
+        </div>
+    </div>
+{% endblock %}
