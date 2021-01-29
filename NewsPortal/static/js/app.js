@@ -10,15 +10,6 @@ $(function () {
             body.removeClass('loaded_hiding');
         }, 1500);
     });
-
-    //Burger
-    // $("#burger").on("click", function (event) {
-    //     event.preventDefault();
-    //
-    //     $("#nav").toggleClass("see-nav");
-    //
-    // });
-
     //Slider
     const intro = $("#intro");
 
@@ -128,36 +119,6 @@ $(function () {
             nav.removeClass("fixed");
         }
     }
-
-    function autoType(elementClass, typingSpeed) {
-        let thhis = $(elementClass);
-        thhis.css({
-            "position": "relative",
-            "display": "inline-block"
-        });
-        thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
-        thhis = thhis.find(".text-js");
-        let text = thhis.text().trim().split('');
-        let amntOfChars = text.length;
-        let newString = "";
-        thhis.text("|");
-        setTimeout(function () {
-            thhis.css("opacity", 1);
-            thhis.prev().removeAttr("style");
-            thhis.text("");
-            for (let i = 0; i < amntOfChars; i++) {
-                (function (i, char) {
-                    setTimeout(function () {
-                        newString += char;
-                        thhis.text(newString);
-                    }, i * typingSpeed);
-                })(i + 1, text[i]);
-            }
-        }, 500);
-    }
-
-    autoType(".text-js",150);
-
 
     new WOW().init();
 

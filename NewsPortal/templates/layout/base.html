@@ -92,41 +92,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<script>
-    let nav = Vue.createApp({
-        data: () => ({
-            isActive: false,
-            isFixed: false,
-            width: 0,
-            scrollPosition: 0,
-        }),
-        methods: {
-            toggleMenu() {
-                this.isActive = !this.isActive;
-                console.log(1);
-            },
-            updateWidth() {
-                this.width = window.innerWidth;
-                if (this.width > 768) {
-                    this.isActive = false;
-                }
-            },
-            onScroll() {
-                this.scrollPosition = window.scrollY;
-                this.isFixed = this.scrollPosition > 2;
-            },
-        },
-        created() {
-            window.addEventListener('resize', this.updateWidth);
-            window.addEventListener('scroll', this.onScroll);
-        },
-        destroyed() {
-            window.removeEventListener('resize', this.updateWidth);
-        },
-    });
-
-    nav.mount('#app');
-</script>
+<script src="{% static 'js/vueApp.js' %}"></script>
 <script src="{% static 'js/app.js' %}"></script>
 <script src="{% static 'js/autocomplete.js' %}"></script>
 <script src="{% static 'js/bootstrapJs/util.js' %}"></script>
