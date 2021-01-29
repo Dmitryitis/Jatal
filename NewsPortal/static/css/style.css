@@ -68,6 +68,7 @@ p {
     background: #161616;
     padding: 25px 0;
     position: relative;
+    transition: all 0.5s;
 }
 
 .header__fixed {
@@ -75,7 +76,8 @@ p {
     top: 0;
     left: 0;
     z-index: 1000;
-    padding: 10px 0;
+    padding: 8px 0;
+    transition: all 0.5s;
 }
 
 .header__inner {
@@ -103,6 +105,10 @@ p {
         font-family: "Tenali Ramakrishna", sans-serif;
         color: white;
         width: 50%;
+    }
+
+    .header {
+        padding: 16px 0;
     }
 }
 
@@ -139,6 +145,19 @@ p {
     fill: white;
     margin-top: -9px;
     transition: color 0.2s linear;
+}
+
+.account-logo {
+    width: 25px;
+    height: 25px;
+    fill: white;
+    transition: color 0.2s linear;
+    margin-top: -9px;
+    margin-right: 10px;
+}
+
+.account-logo:hover {
+    fill: #939393;
 }
 
 .header__auth-text {

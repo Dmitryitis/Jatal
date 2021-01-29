@@ -25,45 +25,51 @@
 
 {% include 'sprite/sprite.html' %}
 
-<header class="header" v-bind:class="{'header__fixed':isFixed}">
-    <div class="container">
-        <div class="header__inner">
+<div id="app">
+    <header class="header" v-bind:class="{'header__fixed':isFixed}">
+        <div class="container">
+            <div class="header__inner">
 
-            <div class="btn__burger">
-                <a href="#" class="burger" id="burger" role="button" @click.prevent="toggleMenu">
-                    <svg class="burger__logo">
-                        <use xlink:href="#burger"></use>
+                <div class="btn__burger">
+                    <a href="#" class="burger" id="burger" role="button" @click.prevent="toggleMenu">
+                        <svg class="burger__logo">
+                            <use xlink:href="#burger"></use>
+                        </svg>
+                    </a>
+                </div>
+
+                <nav class="nav" id="nav" v-bind:class="{'see-nav':isActive}">
+                    <a href="#" class="nav__link ">Home</a>
+                    <a href="#" class="nav__link">All post</a>
+                    <div class="nav__link--logo ">Jatal</div>
+                    <a href="#" class="nav__link ">About</a>
+                    <a href="#" class="nav__link">Contacts</a>
+                </nav>
+
+                <div class="header__logo">Jatal</div>
+                <!--            <h1>dfsdfs</h1>-->
+                <a href="#" class="header__auth-text help-text active">
+                    <svg class="account-logo">
+                        <use xlink:href="#account"></use>
                     </svg>
                 </a>
+                <a href="#" class="header__auth active" id="logout">
+                    <svg class="header__auth-logo">
+                        <use xlink:href="#logout"></use>
+                    </svg>
+                    <div class="header__auth-text">Logout</div>
+                </a>
+
+                {#                <a href="#" class="header__auth active" id="login">#}
+                {#                    <svg class="header__auth-logo">#}
+                {#                        <use xlink:href="#login"></use>#}
+                {#                    </svg>#}
+                {#                    <div class="header__auth-text">Login</div>#}
+                {#                </a>#}
             </div>
-
-            <nav class="nav" id="nav" v-bind:class="{'see-nav':isActive}">
-                <a href="#" class="nav__link wow fadeInLeft">Home</a>
-                <a href="#" class="nav__link wow fadeInLeft">All post</a>
-                <div class="nav__link--logo wow fadeInDown">Jatal</div>
-                <a href="#" class="nav__link wow fadeInRight">About</a>
-                <a href="#" class="nav__link wow fadeInRight">Contacts</a>
-            </nav>
-
-            <div class="header__logo">Jatal</div>
-            <!--            <h1>dfsdfs</h1>-->
-            {#            <a href="#" class="header__auth-text help-text active">Personal cabinet</a>#}
-            {#            <a href="#" class="header__auth active" id="logout">#}
-            {#                <svg class="header__auth-logo">#}
-            {#                    <use xlink:href="#logout"></use>#}
-            {#                </svg>#}
-            {#                <div class="header__auth-text">Logout</div>#}
-            {#            </a>#}
-
-            <a href="#" class="header__auth active" id="login">
-                <svg class="header__auth-logo">
-                    <use xlink:href="#login"></use>
-                </svg>
-                <div class="header__auth-text">Login</div>
-            </a>
         </div>
-    </div>
-</header>
+    </header>
+</div>
 
 {% block content %}
 {% endblock %}
@@ -90,7 +96,6 @@
             isFixed: false,
             width: 0,
             scrollPosition: 0,
-            height: document.querySelector('.intro').clientHeight,
         }),
         methods: {
             toggleMenu() {
@@ -105,10 +110,7 @@
             },
             onScroll() {
                 this.scrollPosition = window.scrollY;
-                console.log(this.height);
-                console.log(this.scrollPosition);
-                this.isFixed = this.scrollPosition > this.height;
-                console.log(this.isFixed)
+                this.isFixed = this.scrollPosition > 2;
             },
         },
         created() {
@@ -120,7 +122,7 @@
         },
     });
 
-    nav.mount('.header');
+    nav.mount('#app');
 </script>
 <script src="{% static 'js/app.js' %}"></script>
 <script src="{% static 'js/autocomplete.js' %}"></script>
