@@ -38,10 +38,10 @@
         <div class="cabinet__header">
             <div class="cabinet__logo">Jatal</div>
             <nav class="cabinet__nav">
-                <a href="#" class="cabinet__link">Personal Data</a>
-                <a href="#" class="cabinet__link">Write Post</a>
-                <a href="#" class="cabinet__link">All posts</a>
-                <a href="#" class="cabinet__link">Back home</a>
+                <a href="{% url 'main_personal' %}" class="cabinet__link">Personal Data</a>
+                <a href="{% url 'write_post' %}" class="cabinet__link">Write Post</a>
+                <a href="{% url 'cabinet_posts' %}" class="cabinet__link">All posts</a>
+                <a href="{% url 'main_page' %}" class="cabinet__link">Back home</a>
             </nav>
         </div>
 

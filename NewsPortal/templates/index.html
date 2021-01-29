@@ -1,189 +1,197 @@
 {% extends 'layout/base.html' %}
 {% load static %}
 {% block content %}
-<div class="intro">
+    <div class="intro" id="introVue">
 
-    <button class="intro__arrow intro__arrow--prev" type="button" id="intro__arrow--prev">
-        <svg class="intro__arrow-icon">
-            <use xlink:href="#arrow"></use>
-        </svg>
-    </button>
-    <button class="intro__arrow intro__arrow--next" type="button" id="intro__arrow--next">
-        <svg class="intro__arrow-icon">
-            <use xlink:href="#arrow"></use>
-        </svg>
-    </button>
+        <button class="intro__arrow intro__arrow--prev" type="button" id="intro__arrow--prev"
+                v-on:click="clickLeftBtn">
+            <svg class="intro__arrow-icon">
+                <use xlink:href="#arrow"></use>
+            </svg>
+        </button>
+        <button class="intro__arrow intro__arrow--next" type="button" id="intro__arrow--next"
+                v-on:click="clickRightBtn">
+            <svg class="intro__arrow-icon">
+                <use xlink:href="#arrow"></use>
+            </svg>
+        </button>
 
-    <div class="intro__inner" id="intro">
-        <div>
-            <div class="intro__bg">
-                <img src="{% static 'img/intro/intro-photo1.jpg' %}"  alt="" class="intro__img">
+        <div class="intro__inner" id="intro">
+            <div>
+                <div class="intro__bg">
+                    <img src="{% static 'img/intro/intro-photo1.jpg' %}" alt="" class="intro__img">
 
-                <div class="intro__item">
-                    <div class="intro__topic">Topic</div>
-                    <p class="intro__text"><a href="#" class="intro__title intro__title-underline">Why Clients Do Not
-                        Appreciate
-                        Your Service the Way
-                        You Wish</a></p>
-                    <div class="intro__author-info">
-                        <div class="intro__author-name">by Jenny Preston</div>
-                        <div class="intro__author-data">April 19, 2020</div>
+                    <div class="intro__item">
+                        <div class="intro__topic">Topic</div>
+                        <p class="intro__text"><a href="#" class="intro__title intro__title-underline">Why Clients Do
+                            Not
+                            Appreciate
+                            Your Service the Way
+                            You Wish</a></p>
+                        <div class="intro__author-info">
+                            <div class="intro__author-name">by Jenny Preston</div>
+                            <div class="intro__author-data">April 19, 2020</div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-
-        </div>
-
-        <div>
-            <div class="intro__bg">
-                <img src="{% static 'img/intro/intro-photo2.jpg' %}" alt="" class="intro__img">
-
-                <div class="intro__item">
-                    <div class="intro__topic">Top</div>
-                    <p class="intro__text"><a href="#" class="intro__title intro__title-underline">Holding Tight to Your
-                        Passions Throughout Your Career</a></p>
-                    <div class="intro__author-info">
-                        <div class="intro__author-name">by Jenny Preston</div>
-                        <div class="intro__author-data">April 19, 2020</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="trend">
-    <div class="container">
-        <div class="trend__inner">
-
-            <div class="trend__header">
-                <div class="trend__title wow fadeInLeft">Trending</div>
-                <div class="trend__line wow fadeInRight"></div>
-            </div>
-            <div class="trend__content">
-
-                <div class="trend__item  wow fadeInLeft">
-                    <a href="#" class="trend__topic">Topic</a>
-                    <p><a href="#" class="trend__text trend__text--underline">How to Use Your Spare Time to Your
-                        Advantage</a></p>
-                    <div class="trend__date">January, 9 2020</div>
-                </div>
-
-                <div class="trend__item  wow fadeInLeft">
-                    <a href="#" class="trend__topic">Topic</a>
-                    <p><a href="#" class="trend__text trend__text--underline">How to Use Your Spare Time to Your
-                        Advantage</a></p>
-                    <div class="trend__date">January, 9 2020</div>
-                </div>
-
-                <div class="trend__item  wow fadeInRight">
-                    <a href="#" class="trend__topic">Topic</a>
-                    <p><a href="#" class="trend__text trend__text--underline">How to Use Your Spare Time to Your
-                        Advantage</a></p>
-                    <div class="trend__date">January, 9 2020</div>
-                </div>
-
-                <div class="trend__item  wow fadeInRight">
-                    <a href="#" class="trend__topic">Topic</a>
-                    <p><a href="#" class="trend__text trend__text--underline">How to Use Your Spare Time to Your
-                        Advantage</a></p>
-                    <div class="trend__date">January, 9 2020</div>
-                </div>
 
             </div>
 
-        </div>
-    </div>
-</div>
+            <div>
+                <div class="intro__bg">
+                    <img src="{% static 'img/intro/intro-photo2.jpg' %}" alt="" class="intro__img">
 
-
-<div class="popular">
-    <div class="container">
-        <div class="popular__inner">
-
-            <div class="trend__header">
-                <div class="trend__title trend__title--popular wow slideInLeft">Most Popular</div>
-                <div class="trend__line trend__line--popular wow slideInRight"></div>
-            </div>
-
-            <div class="popular__content">
-
-                <div class="popular__item wow slideInLeft">
-                    <div class="popular__photo">
-                        <a href="#">
-                            <img src="{% static 'img/popular/photo1.jpg' %}" alt="" class="popular__img"></a>
-                        <label for="topic">
-                            <a href="#" class="popular__topic" id="topic">topic</a>
-                        </label>
-                    </div>
-                   <p><a href="#" class="popular__title popular__title--underline">Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Nihil, quibusdam!</a>
-                    </p>
-
-                    <div class="popular__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et laudantium
-                        libero nam quam! Accusantium aliquam architecto asperiores assumenda beatae blanditiis
-                        consequuntur culpa doloremque dolorum esse facere impedit nesciunt officia pariatur, qui quia
-                        rem reprehenderit sapiente sequi suscipit temporibus tenetur totam vel vitae voluptatem? Eius
-                        facere soluta tempora totam! Ad, voluptates.
-                    </div>
-                    <div class="popular__info">
-                        <div class="popular__info-author">by Jenny Preston</div>
-                        <div class="popular__info-date">20202</div>
+                    <div class="intro__item">
+                        <div class="intro__topic">Top</div>
+                        <p class="intro__text"><a href="#" class="intro__title intro__title-underline">Holding Tight to
+                            Your
+                            Passions Throughout Your Career</a></p>
+                        <div class="intro__author-info">
+                            <div class="intro__author-name">by Jenny Preston</div>
+                            <div class="intro__author-data">April 19, 2020</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="latenews">
-    <div class="container">
-        <div class="latenews__inner">
+    <div class="trend">
+        <div class="container">
+            <div class="trend__inner">
 
-            <div class="trend__header">
-                <div class="trend__title trend__title--popular wow slideInLeft">Latest News</div>
-                <div class="trend__line trend__line--popular wow slideInRight"></div>
-            </div>
+                <div class="trend__header">
+                    <div class="trend__title wow fadeInLeft">Trending</div>
+                    <div class="trend__line wow fadeInRight"></div>
+                </div>
+                <div class="trend__content">
 
-            <div class="popular__content">
-
-                <div class="popular__item popular__item-latest wow slideInLeft">
-                    <div class="popular__photo">
-                        <a href="#">
-                            <img src="{% static 'img/popular/photo1.jpg' %}" alt="" class="popular__img"></a>
-                        <label for="topics">
-                            <a href="#" class="popular__topic" id="topics">topic</a>
-                        </label>
+                    <div class="trend__item  wow fadeInLeft">
+                        <a href="#" class="trend__topic">Topic</a>
+                        <p><a href="#" class="trend__text trend__text--underline">How to Use Your Spare Time to Your
+                            Advantage</a></p>
+                        <div class="trend__date">January, 9 2020</div>
                     </div>
-                    <p><a href="#" class="popular__title popular__title--underline">Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Nihil, quibusdam!</a>
-                    </p>
-                    <div class="popular__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-                        assumenda at commodi consectetur consequuntur eius impedit, inventore ipsum iste laudantium
-                        maxime nisi nobis perferendis, perspiciatis possimus praesentium vel vitae voluptatibus.
-                        Accusamus asperiores aut cupiditate error esse, harum id itaque labore laborum libero molestiae
-                        neque non numquam odio optio quo rerum.
+
+                    <div class="trend__item  wow fadeInLeft">
+                        <a href="#" class="trend__topic">Topic</a>
+                        <p><a href="#" class="trend__text trend__text--underline">How to Use Your Spare Time to Your
+                            Advantage</a></p>
+                        <div class="trend__date">January, 9 2020</div>
                     </div>
-                    <div class="popular__info">
-                        <div class="popular__info-author">by Jenny Preston</div>
-                        <div class="popular__info-date">20202</div>
+
+                    <div class="trend__item  wow fadeInRight">
+                        <a href="#" class="trend__topic">Topic</a>
+                        <p><a href="#" class="trend__text trend__text--underline">How to Use Your Spare Time to Your
+                            Advantage</a></p>
+                        <div class="trend__date">January, 9 2020</div>
                     </div>
+
+                    <div class="trend__item  wow fadeInRight">
+                        <a href="#" class="trend__topic">Topic</a>
+                        <p><a href="#" class="trend__text trend__text--underline">How to Use Your Spare Time to Your
+                            Advantage</a></p>
+                        <div class="trend__date">January, 9 2020</div>
+                    </div>
+
                 </div>
 
             </div>
-
-            <div class="btn__inner wow bounce">
-                <a href="#" class="btn-latest">
-                    <div class="btn__text">View More News</div>
-
-                    <svg class="btn__icon-arrow">
-                        <use xlink:href="#arrow"></use>
-                    </svg>
-                </a>
-            </div>
-
         </div>
     </div>
-</div>
+
+
+    <div class="popular">
+        <div class="container">
+            <div class="popular__inner">
+
+                <div class="trend__header">
+                    <div class="trend__title trend__title--popular wow slideInLeft">Most Popular</div>
+                    <div class="trend__line trend__line--popular wow slideInRight"></div>
+                </div>
+
+                <div class="popular__content">
+
+                    <div class="popular__item wow slideInLeft">
+                        <div class="popular__photo">
+                            <a href="#">
+                                <img src="{% static 'img/popular/photo1.jpg' %}" alt="" class="popular__img"></a>
+                            <label for="topic">
+                                <a href="#" class="popular__topic" id="topic">topic</a>
+                            </label>
+                        </div>
+                        <p><a href="#" class="popular__title popular__title--underline">Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Nihil, quibusdam!</a>
+                        </p>
+
+                        <div class="popular__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                            laudantium
+                            libero nam quam! Accusantium aliquam architecto asperiores assumenda beatae blanditiis
+                            consequuntur culpa doloremque dolorum esse facere impedit nesciunt officia pariatur, qui
+                            quia
+                            rem reprehenderit sapiente sequi suscipit temporibus tenetur totam vel vitae voluptatem?
+                            Eius
+                            facere soluta tempora totam! Ad, voluptates.
+                        </div>
+                        <div class="popular__info">
+                            <div class="popular__info-author">by Jenny Preston</div>
+                            <div class="popular__info-date">20202</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="latenews">
+        <div class="container">
+            <div class="latenews__inner">
+
+                <div class="trend__header">
+                    <div class="trend__title trend__title--popular wow slideInLeft">Latest News</div>
+                    <div class="trend__line trend__line--popular wow slideInRight"></div>
+                </div>
+
+                <div class="popular__content">
+
+                    <div class="popular__item popular__item-latest wow slideInLeft">
+                        <div class="popular__photo">
+                            <a href="#">
+                                <img src="{% static 'img/popular/photo1.jpg' %}" alt="" class="popular__img"></a>
+                            <label for="topics">
+                                <a href="#" class="popular__topic" id="topics">topic</a>
+                            </label>
+                        </div>
+                        <p><a href="#" class="popular__title popular__title--underline">Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Nihil, quibusdam!</a>
+                        </p>
+                        <div class="popular__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+                            assumenda at commodi consectetur consequuntur eius impedit, inventore ipsum iste laudantium
+                            maxime nisi nobis perferendis, perspiciatis possimus praesentium vel vitae voluptatibus.
+                            Accusamus asperiores aut cupiditate error esse, harum id itaque labore laborum libero
+                            molestiae
+                            neque non numquam odio optio quo rerum.
+                        </div>
+                        <div class="popular__info">
+                            <div class="popular__info-author">by Jenny Preston</div>
+                            <div class="popular__info-date">20202</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="btn__inner wow bounce">
+                    <a href="{% url 'all_posts' %}" class="btn-latest">
+                        <div class="btn__text">View More News</div>
+
+                        <svg class="btn__icon-arrow">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
 {% endblock %}

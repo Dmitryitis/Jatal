@@ -33,6 +33,53 @@ let nav = Vue.createApp({
 
 nav.mount('#app');
 
+
+//Slider
+// let slider = Vue.createApp({
+//     data: () => ({
+//         intro: document.querySelector('#intro'),
+//     }),
+//     methods: {
+//         clickRightBtn(){
+//             console.log(1);
+//             this.intro.slick('slickNext');
+//         },
+//         clickLeftBtn(){
+//             this.intro.slick('slickPrev');
+//         }
+//     },
+// });
+//
+// slider.mount('#introVue');
+
+//Search
+let search = Vue.createApp({
+    data: () => ({
+        width: window.innerWidth,
+        scrollPosition: 0,
+        footerHeight: window.innerHeight,
+    }),
+    computed: {
+        fixedReady() {
+            return this.width > 868 && this.scrollPosition > 550;
+        }
+    },
+    methods: {
+        updateWidth() {
+            this.width = window.innerWidth;
+        },
+        updateScroll() {
+            this.scrollPosition = window.scrollY;
+        }
+    },
+    created() {
+        window.addEventListener('resize', this.updateWidth);
+        window.addEventListener('scroll', this.updateScroll);
+    }
+});
+
+search.mount('#posts__search-system');
+
 //AutoTypeAnimation
 let autoAnimation = Vue.createApp({
     data: () => ({

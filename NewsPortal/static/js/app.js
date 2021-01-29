@@ -10,6 +10,7 @@ $(function () {
             body.removeClass('loaded_hiding');
         }, 1500);
     });
+
     //Slider
     const intro = $("#intro");
 
@@ -38,7 +39,7 @@ $(function () {
     //Select
     $(".select").each(function () {
 
-        var $this = $(this),
+        let $this = $(this),
             selectOption = $this.find('option'),
             selectOptionLenght = selectOption.length,
             selectedOption = selectOption.filter(':selected'),
@@ -52,16 +53,16 @@ $(function () {
             text: 'Select category...'
         }).insertAfter($this);
 
-        var selectGap = $this.next('.select__gap'),
+        let selectGap = $this.next('.select__gap'),
             caret = selectGap.find('.caret');
 
         $('<ul>', {
             class: 'select__list'
         }).insertAfter(selectGap);
 
-        var selectList = selectGap.next('.select__list');
+        let selectList = selectGap.next('.select__list');
 
-        for (var i = 0; i < selectOptionLenght; i++) {
+        for (let i = 0; i < selectOptionLenght; i++) {
             $('<li>', {
                 class: 'select__item',
                 html: $('<span>', {
@@ -70,7 +71,7 @@ $(function () {
             }).attr('data-value', selectOption.eq(i).val()).appendTo(selectList);
         }
 
-        var selectItem = selectList.find('li');
+        let selectItem = selectList.find('li');
 
         selectList.slideUp(0);
 
@@ -81,7 +82,7 @@ $(function () {
                 selectList.slideDown(dur);
 
                 selectItem.on('click', function () {
-                    var chooseItem = $(this).data('value');
+                    let chooseItem = $(this).data('value');
 
                     $('select').val(chooseItem).attr('selected', 'selected');
                     selectGap.text($(this).find('span').text());
@@ -97,28 +98,6 @@ $(function () {
         });
 
     });
-
-    //Nav
-    let nav = $('#post');
-    let innerH = nav.innerHeight();
-    let scrollOffset = $(window).scrollTop();
-
-    checkScroll(scrollOffset);
-
-    $(window).on("scroll", function () {
-
-        scrollOffset = $(this).scrollTop();
-        checkScroll(scrollOffset);
-
-    });
-
-    function checkScroll(scrollOffset) {
-        if (scrollOffset >= innerH-300 && $(window).width() > 868) {
-            nav.addClass("fixed");
-        } else {
-            nav.removeClass("fixed");
-        }
-    }
 
     new WOW().init();
 
