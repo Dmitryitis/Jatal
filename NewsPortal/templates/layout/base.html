@@ -19,22 +19,25 @@
 
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/vue/vue.js' %}"></script>
 </head>
 <body>
 
 {% include 'sprite/sprite.html' %}
 
-<header class="header">
+<header class="header" v-bind:class="{'header__fixed':isFixed}">
     <div class="container">
         <div class="header__inner">
 
-            <a href="#" class="burger" id="burger">
-                <svg class="burger__logo">
-                    <use xlink:href="#burger"></use>
-                </svg>
-            </a>
+            <div class="btn__burger">
+                <a href="#" class="burger" id="burger" role="button" @click.prevent="toggleMenu">
+                    <svg class="burger__logo">
+                        <use xlink:href="#burger"></use>
+                    </svg>
+                </a>
+            </div>
 
-            <nav class="nav" id="nav">
+            <nav class="nav" id="nav" v-bind:class="{'see-nav':isActive}">
                 <a href="#" class="nav__link wow fadeInLeft">Home</a>
                 <a href="#" class="nav__link wow fadeInLeft">All post</a>
                 <div class="nav__link--logo wow fadeInDown">Jatal</div>
@@ -79,10 +82,50 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+    let nav = Vue.createApp({
+        data: () => ({
+            isActive: false,
+            isFixed: false,
+            width: 0,
+            scrollPosition: 0,
+            height: document.querySelector('.intro').clientHeight,
+        }),
+        methods: {
+            toggleMenu() {
+                this.isActive = !this.isActive;
+                console.log(1);
+            },
+            updateWidth() {
+                this.width = window.innerWidth;
+                if (this.width > 768) {
+                    this.isActive = false;
+                }
+            },
+            onScroll() {
+                this.scrollPosition = window.scrollY;
+                console.log(this.height);
+                console.log(this.scrollPosition);
+                this.isFixed = this.scrollPosition > this.height;
+                console.log(this.isFixed)
+            },
+        },
+        created() {
+            window.addEventListener('resize', this.updateWidth);
+            window.addEventListener('scroll', this.onScroll);
+        },
+        destroyed() {
+            window.removeEventListener('resize', this.updateWidth);
+        },
+    });
+
+    nav.mount('.header');
+</script>
 <script src="{% static 'js/app.js' %}"></script>
 <script src="{% static 'js/autocomplete.js' %}"></script>
-<script src="{% static 'js/util.js' %}"></script>
-<script src="{% static 'js/modal.js' %}"></script>
+<script src="{% static 'js/bootstrapJs/util.js' %}"></script>
+<script src="{% static 'js/bootstrapJs/modal.js' %}"></script>
 
 </body>
 </html>

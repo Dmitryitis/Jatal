@@ -70,6 +70,14 @@ p {
     position: relative;
 }
 
+.header__fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
 .header__inner {
     width: 100%;
     display: flex;
@@ -204,11 +212,13 @@ p {
     display: flex;
     flex-direction: column;
     position: absolute;
+    width: 100%;
     top: 100%;
     left: 0;
     background: #161616;
-    z-index: 1;
+    z-index: 100;
 }
+
 
 .see-nav .nav__link {
     display: flex;
@@ -216,11 +226,19 @@ p {
 }
 
 .burger {
-    display: flex;
+    display: none;
     align-items: center;
-    width: 25%;
+    width: 25px;
     height: 25px;
     margin-top: -9px;
+}
+
+.btn__burger {
+    display: flex;
+    width: 25%;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
 }
 
 .burger__logo {
@@ -233,6 +251,10 @@ p {
 @media (max-width: 768px) {
     .burger__logo {
         display: block;
+    }
+
+    .burger {
+        display: flex;
     }
 }
 

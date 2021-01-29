@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be034319-c7fc-4513-8891-a1f20443c6d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/NewsPortal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NewsPortal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personalcabinet/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/personalcabinet/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personalcabinet/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/personalcabinet/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/cabinetbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/cabinetbase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/personal-allpost.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal-allpost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/writepost.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/writepost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrapJs/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrapJs/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -56,14 +52,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\45\Desktop\Jatal\Jatal\NewsPortal\static\js\bootstrapJs" />
+      <recent name="E:\Jatal\NewsPortal\templates" />
+      <recent name="E:\Jatal\NewsPortal\templates\sprite" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\45\Desktop\Jatal\Jatal\NewsPortal\static\js\vue" />
       <recent name="C:\Users\45\Desktop\Jatal\Jatal\NewsPortal\static\js" />
       <recent name="E:\Jatal\NewsPortal\static" />
       <recent name="E:\Jatal\NewsPortal\templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Jatal\NewsPortal\templates" />
-      <recent name="E:\Jatal\NewsPortal\templates\sprite" />
     </key>
   </component>
   <component name="RunManager">
@@ -105,6 +103,10 @@
       <updated>1611750482635</updated>
       <workItem from="1611750509346" duration="10085000" />
       <workItem from="1611771850895" duration="6395000" />
+      <workItem from="1611828806778" duration="31000" />
+      <workItem from="1611830024189" duration="22000" />
+      <workItem from="1611856855664" duration="2832000" />
+      <workItem from="1611860288249" duration="7398000" />
     </task>
     <servers />
   </component>
@@ -112,29 +114,29 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1611771928565">
+    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1611860042231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611771928565" />
-    <state width="1323" height="220" key="GridCell.Tab.0.bottom" timestamp="1611779869120">
+    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611860042231" />
+    <state width="1323" height="188" key="GridCell.Tab.0.bottom" timestamp="1611868036080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="220" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611779869120" />
+    <state width="1323" height="188" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611868036080" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611761343650" />
-    <state width="1323" height="220" key="GridCell.Tab.0.center" timestamp="1611779869120">
+    <state width="1323" height="188" key="GridCell.Tab.0.center" timestamp="1611868036080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="220" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1611779869120" />
+    <state width="1323" height="188" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1611868036080" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611761343650" />
-    <state width="1323" height="220" key="GridCell.Tab.0.left" timestamp="1611779869120">
+    <state width="1323" height="188" key="GridCell.Tab.0.left" timestamp="1611868036080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="220" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1611779869120" />
+    <state width="1323" height="188" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1611868036080" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611761343650" />
-    <state width="1323" height="220" key="GridCell.Tab.0.right" timestamp="1611779869120">
+    <state width="1323" height="188" key="GridCell.Tab.0.right" timestamp="1611868036080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="220" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611779869120" />
+    <state width="1323" height="188" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611868036080" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611761343650" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1611771954723">
       <screen x="0" y="0" width="1366" height="728" />

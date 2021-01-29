@@ -12,12 +12,12 @@ $(function () {
     });
 
     //Burger
-    $("#burger").on("click", function (event) {
-        event.preventDefault();
-
-        $("#nav").toggleClass("see-nav");
-
-    });
+    // $("#burger").on("click", function (event) {
+    //     event.preventDefault();
+    //
+    //     $("#nav").toggleClass("see-nav");
+    //
+    // });
 
     //Slider
     const intro = $("#intro");
