@@ -11,8 +11,14 @@
 
             <form action="#" method="post" class="auth__auth">
                 <div class="auth__item">
-                    <label for="email">Email Address or Username</label>
-                    <input type="text" id="email" class="auth__email" name="username"
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="auth__email" name="username"
+                           required>
+                    <div class="auth__error">Error</div>
+                </div>
+                 <div class="auth__item">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" class="auth__email" name="email"
                            required>
                 </div>
 

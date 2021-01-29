@@ -2765,6 +2765,10 @@ ul {
     margin-bottom: 20px;
 }
 
+.auth__error {
+    margin-top: 5px;
+}
+
 .auth__inner {
     display: flex;
     flex-direction: column;

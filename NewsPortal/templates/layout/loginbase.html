@@ -22,12 +22,55 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/vue/vue.js' %}"></script>
 </head>
 <body>
 
 {% block content %}
 {% endblock %}
 
-<script src="{% static 'js/app.js' %}"></script>
+
+<script>
+    function autoType(elementClass, typingSpeed) {
+        let thhis = $(elementClass);
+        console.log(thhis);
+        thhis.css({
+            "position": "relative",
+            "display": "inline-block"
+        });
+        thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+        thhis = thhis.find(".text-js");
+        let text = thhis.text().trim().split('');
+        let amntOfChars = text.length;
+        let newString = "";
+        thhis.text("|");
+        setTimeout(function () {
+            thhis.css("opacity", 1);
+            thhis.prev().removeAttr("style");
+            thhis.text("");
+            for (let i = 0; i < amntOfChars; i++) {
+                (function (i, char) {
+                    setTimeout(function () {
+                        newString += char;
+                        thhis.text(newString);
+                    }, i * typingSpeed);
+                })(i + 1, text[i]);
+            }
+        }, 500);
+    }
+    let autoAnimation = Vue.createApp({
+        data: () => ({
+            speed: 150,
+            autoText: '.text-js',
+        }),
+        methods: {},
+        mounted() {
+            console.log(this.a);
+            autoType(this.autoText, this.speed);
+        },
+    });
+
+    autoAnimation.mount('.login')
+</script>
 </body>
 </html>

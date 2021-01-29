@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.contrib.auth import logout
+from django.shortcuts import render, redirect
 
 
-# Create your views here.
 def main_login(request):
     return render(request, 'login.html')
 
@@ -12,3 +12,8 @@ def auth(request):
 
 def registration(request):
     return render(request, 'registration.html')
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('main_page')
