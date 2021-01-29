@@ -2642,8 +2642,12 @@ ul {
     align-items: center;
     flex-direction: column;
     width: 33%;
-    height: 420px;
+    /*height: 420px;*/
     background: rgba(0, 0, 0, 0.5);
+}
+
+.login__inner-main {
+    height: 420px;
 }
 
 @media (max-width: 968px) {
@@ -2767,6 +2771,8 @@ ul {
 
 .auth__error {
     margin-top: 5px;
+    color: #ff8585;
+    font-size: 16px;
 }
 
 .auth__inner {
@@ -2824,9 +2830,10 @@ ul {
     transition: background 0.4s linear;
 }
 
-.auth__btn:hover {
-    background: #005a87;
+.auth__btn:disabled {
+    background: #e53a56;
 }
+
 
 .cabinet {
     width: 100%;

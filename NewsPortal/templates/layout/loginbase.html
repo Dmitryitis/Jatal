@@ -33,7 +33,6 @@
 <script>
     function autoType(elementClass, typingSpeed) {
         let thhis = $(elementClass);
-        console.log(thhis);
         thhis.css({
             "position": "relative",
             "display": "inline-block"
@@ -58,19 +57,60 @@
             }
         }, 500);
     }
+
     let autoAnimation = Vue.createApp({
         data: () => ({
             speed: 150,
             autoText: '.text-js',
         }),
-        methods: {},
         mounted() {
-            console.log(this.a);
             autoType(this.autoText, this.speed);
         },
     });
+    autoAnimation.mount('#log');
 
-    autoAnimation.mount('.login')
+    let registration = Vue.createApp({
+        data: () => ({
+            user: {
+                username: '',
+                email: '',
+                password: '',
+                rep_password: '',
+            },
+            patterns: {
+                pat_username: /^[а-я]{3,12}|[a-zA-Z0-9_]{3,12}$/,
+                pat_email: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+                pat_password: /^(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z]*([0-9#$-/:-?{-~!"^_`\[\]]))(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]*[a-zA-Z])[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]{4,}$/,
+            },
+        }),
+        computed: {
+            formReady() {
+                return !!(this.valid_username && this.valid_email && this.valid_password && this.valid_rep_password);
+            },
+            valid_username() {
+                console.log(1);
+                return this.patterns.pat_username.test(this.user.username);
+            },
+            valid_email() {
+                return this.patterns.pat_email.test(this.user.email);
+            },
+            valid_password() {
+                return this.patterns.pat_password.test(this.user.password);
+            },
+            valid_rep_password() {
+                return this.user.password === this.user.rep_password;
+            }
+        },
+        methods: {
+            clickBtn() {
+                if (this.formReady) {
+                    console.log(this.user);
+                }
+            },
+        },
+    });
+    registration.mount('#registr');
+
 </script>
 </body>
 </html>
