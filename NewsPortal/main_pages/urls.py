@@ -1,6 +1,7 @@
 from django.urls import path
 
-from main_pages.views import main_page, all_posts, about, contact
+from auth_jatal.views import main_page
+from main_pages.views import all_posts, about, contact
 
 urlpatterns = [
     path('', main_page, name='main_page'),

@@ -39,17 +39,17 @@
                 </div>
 
                 <nav class="nav" id="nav" v-bind:class="{'see-nav':isActive}">
-                    <a href="#" class="nav__link ">Home</a>
-                    <a href="#" class="nav__link">All post</a>
+                    <a href="{% url 'main_page' %}" class="nav__link ">Home</a>
+                    <a href="{% url 'all_posts' %}" class="nav__link">All post</a>
                     <div class="nav__link--logo ">Jatal</div>
-                    <a href="#" class="nav__link ">About</a>
-                    <a href="#" class="nav__link">Contacts</a>
+                    <a href="{% url 'about' %}" class="nav__link ">About</a>
+                    <a href="{% url 'contact' %}" class="nav__link">Contacts</a>
                 </nav>
 
                 <div class="header__logo">Jatal</div>
                 <!--            <h1>dfsdfs</h1>-->
                 {% if user %}
-                    <a href="#" class="header__auth-text help-text active">
+                    <a href="{% url 'main_personal' %}" class="header__auth-text help-text active">
                         <svg class="account-logo">
                             <use xlink:href="#account"></use>
                         </svg>
