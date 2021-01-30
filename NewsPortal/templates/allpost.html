@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="posts" id="posts__search-system">
+    <div class="posts" id="posts__search-system" v-cloak>
         <div class="container">
             <div class="posts__inner">
                 <div class="posts__content">
@@ -41,7 +41,8 @@
                     {% endif %}
                 </div>
 
-                <form action="{% url 'all_posts' %}" method="post" class="posts__search-system" v-bind:class="{'fixed': fixedReady}"
+                <form action="{% url 'all_posts' %}" method="post" class="posts__search-system"
+                      v-bind:class="{'fixed': fixedReady}"
                       id="post">
                     {% csrf_token %}
                     <div class="posts__category">
@@ -58,12 +59,26 @@
                     <div class="autocomplete posts__search ">
                         <label>
                             <input type="search" id="search" name="search" class="posts__search-field"
-                                   placeholder="Search..."/>
+                                   placeholder="Search..." v-bind:value="inputValue" v-on:input="searchFunc"/>
                         </label>
                         <label>
                             <button type="submit" class="searh-btn">Search</button>
                         </label>
                     </div>
+                    {% verbatim %}
+                    <div v-if="searched.length !== 0">
+                        <div class="posts__category">
+                            <div class="posts__category-title">Найдено {{ searched.length }}</div>
+                            <div class="posts__category-line"></div>
+                        </div>
+
+                        <div class="now__search">
+                            <a href="#" class="now__search-item" v-for="(search,i) in searched" v-on:click="clickSearched(i)">
+                                {{ search }}</a>
+                        </div>
+
+                    </div>
+                    {% endverbatim %}
                 </form>
             </div>
 

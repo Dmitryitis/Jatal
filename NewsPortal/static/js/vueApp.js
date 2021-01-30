@@ -42,6 +42,8 @@ let search = Vue.createApp({
         scrollPosition: 0,
         footerHeight: window.innerHeight,
         info: [],
+        inputValue: '',
+        searched: [],
     }),
     computed: {
         fixedReady() {
@@ -54,16 +56,36 @@ let search = Vue.createApp({
         },
         updateScroll() {
             this.scrollPosition = window.scrollY;
+        },
+        searchFunc(e) {
+            this.inputValue = e.target.value.trim();
+            if (this.inputValue.length !== 0) {
+                for (let i in info) {
+                    if (this.inputValue.length !== 0 && info[i].title.toLowerCase().includes(this.inputValue.toLowerCase())) {
+                        if (!(this.searched.includes(info[i].title))) {
+                            this.searched.push(info[i].title);
+                        }
+                    }
+                }
+            } else {
+                this.searched = [];
+            }
+        },
+        searchInfo() {
+            axios.get('/api/posts/')
+                .then(function (response) {
+                    this.info = response.data;
+                });
+        },
+        clickSearched(i) {
+            this.inputValue = this.searched[i];
+            this.searched = [];
         }
     },
     created() {
         window.addEventListener('resize', this.updateWidth);
         window.addEventListener('scroll', this.updateScroll);
-        axios.get('/api/posts/')
-            .then(function (response) {
-                this.info = response.data;
-                console.log(this.info);
-            });
+        this.searchInfo();
     },
 
 });
