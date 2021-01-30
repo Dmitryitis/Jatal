@@ -17,12 +17,32 @@ def all_posts(request):
     topics = Topic.objects.all()
     if request.method == 'POST':
         topic = Topic.objects.filter(name=request.POST['val'])
+
         search = request.POST['search']
-        if topic:
-            posts = Post.objects.filter(topic=topic[0])
+        if len(topic) != 0 and search != '':
+            posts = Post.objects.filter(title=search, topic=topic[0].pk)
             context = {
                 'posts': posts,
-                'topics': topics
+                'topics': topics,
+                'user': request.user
+            }
+            shortener_text(posts)
+            return render(request, 'allpost.html', context)
+        elif search != '':
+            posts = Post.objects.filter(title=search)
+            context = {
+                'posts': posts,
+                'topics': topics,
+                'user': request.user
+            }
+            shortener_text(posts)
+            return render(request, 'allpost.html', context)
+        elif len(topic) != 0:
+            posts = Post.objects.filter(topic=topic[0].pk)
+            context = {
+                'posts': posts,
+                'topics': topics,
+                'user': request.user
             }
             shortener_text(posts)
             return render(request, 'allpost.html', context)
@@ -30,17 +50,28 @@ def all_posts(request):
     shortener_text(posts)
     context = {
         'posts': posts,
-        'topics': topics
+        'topics': topics,
+        'user': ''
     }
     return render(request, 'allpost.html', context)
 
 
 def about(request):
-    return render(request, 'about.html')
+    if request.user.is_authenticated:
+        context = {
+            'user': request.user,
+        }
+        return render(request, 'about.html', context)
+    return render(request, 'about.html', {'user': ''})
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    if request.user.is_authenticated:
+        context = {
+            'user': request.user,
+        }
+        return render(request, 'contact.html', context)
+    return render(request, 'contact.html', {'user': ''})
 
 
 def shortener_text(posts):

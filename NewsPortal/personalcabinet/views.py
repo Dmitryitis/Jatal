@@ -1,9 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.core import  serializers
+from django.core import serializers
 # Create your views here.
-from personalcabinet.forms import CreatePost
-from personalcabinet.models import Topic, Post
+from personalcabinet.forms import CreatePost, CreateComment
+from personalcabinet.models import Topic, Post, Comment
 
 
 @login_required
@@ -47,7 +47,19 @@ def write_post(request):
 
 def single_post(request, post_id):
     post = Post.objects.get(pk=post_id)
+    comments = Comment.objects.filter(post=post_id)
     context = {
         'post': post,
+        'comments': comments,
     }
     return render(request, 'singlepost.html', context)
+
+
+@login_required
+def create_comment(request, post_id):
+    if request.method == 'POST':
+        form = CreateComment(request.POST)
+        if form.is_valid():
+            text = form.cleaned_data['text']
+            Comment.objects.create(text=text, author=request.user, post_id=post_id)
+            return redirect('single_post', post_id)

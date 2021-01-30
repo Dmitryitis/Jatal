@@ -58,6 +58,5 @@ def main_page(request):
         context = {
             'user': request.user,
         }
-        print('dfsdf')
         return render(request, 'index.html', context)
     return render(request, 'index.html', {'user': ''})

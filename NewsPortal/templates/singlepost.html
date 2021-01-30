@@ -16,23 +16,23 @@
                     <div class="singpost__info-item">10 views</div>
                     <div class="singpost__info-items posts__topic">{{ post.topic.name }}</div>
                 </div>
-                <div class="singpost__text wow fadeInUp">
+                <div class="singpost__text">
                     {{ post.text }}
                 </div>
 
-{#                <div class="singpost__tags wow fadeInLeft">#}
-{#                    <div class="singpost__tags-item posts__tags-item">tag</div>#}
-{#                </div>#}
+                {#                <div class="singpost__tags wow fadeInLeft">#}
+                {#                    <div class="singpost__tags-item posts__tags-item">tag</div>#}
+                {#                </div>#}
 
                 <div class="singpost__author">
-                    <div class="singpost__author-photo wow fadeInLeft">
+                    <div class="singpost__author-photo">
                         <img src="{% static 'img/posts/authorphoto.jpg' %}" alt="" class="singpost__author-img">
                     </div>
                     <div class="singpost__author-content">
-                        <div class="singpost__author-name wow fadeInRight">{{ post.author.first_name }} {{ post.author.last_name }}</div>
+                        <div class="singpost__author-name">{{ post.author.first_name }} {{ post.author.last_name }}</div>
                         <div>
                             <form method="post" action="">
-                                <button type="submit" class="singpost__author-subscribe wow fadeInLeft" id="button">
+                                <button type="submit" class="singpost__author-subscribe" id="button">
                                     likes
                                     1
                                 </button>
@@ -51,55 +51,31 @@
                     <div class="comments__title">Comments</div>
 
                     <div class="comments__content">
-                        <div class="comments__item">
-                            <div class="comments__info">
-                                <div class="comments__name">
-                                    ${coment.user.name} ${coment.user.surname}
-                                </div>
-
-                                <div class="commemts__date">${coment.date}</div>
-
-                                <div class="comments__text">${coment.text}
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
-                             tabindex="-1" role="dialog"
-                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-
-                                    <button type="button" class="modal__close" data-dismiss="modal" aria-label="Close">
-                                        <svg class="modal__close-icon">
-                                            <use xlink:href="#close"></use>
-                                        </svg>
-                                    </button>
-
-                                    <div class="modal__title">Write comment</div>
-
-                                    <form class="form" method="post">
-                                        <div class="form__group">
-
-                                            <div class="modal__textarea">
-                                                <label for="texts">Comment</label>
-                                                <textarea class="modal__text" name="text" id="texts"></textarea>
-                                            </div>
-
-                                            <button class="btn btn--pink" type="submit">Send comment</button>
-
+                        {% if comments %}
+                            {% for comment in comments %}
+                                <div class="comments__item">
+                                    <div class="comments__info">
+                                        <div class="comments__name">
+                                            {{ comment.author.first_name }} {{ comment.author.last_name }}
                                         </div>
-                                    </form>
-
-
+                                        <div class="commemts__date">{{ comment.date_created |date:"M d,Y H:i" }}</div>
+                                        <div class="comments__text">
+                                            {{ comment.text }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="comments__item">
+                                <div class="comments__info">
+                                    No comments
                                 </div>
                             </div>
-                        </div>
-
+                        {% endif %}
                     </div>
 
-                    <form method="post" action="#" class="comments__post">
+                    <form method="post" action="{% url 'create_comment' post.pk %}" class="comments__post">
+                        {% csrf_token %}
                         <div class="comments__post-title">Write comments</div>
 
                         <div class="comments__post-redactor">
@@ -112,14 +88,11 @@
                             </div>
 
                             <div class="comments__post-btn">
-                                <button type="button" class="comments__btn">Post comment</button>
+                                <button type="submit" class="comments__btn">Post comment</button>
                             </div>
                         </div>
                     </form>
-
                 </div>
-
-
             </div>
         </div>
     </div>

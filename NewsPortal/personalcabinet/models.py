@@ -31,3 +31,10 @@ class Post(models.Model):
         img = Image.open(self.photo.path)
         img.resize((1920, 1280), PIL.Image.ANTIALIAS)
         img.save(self.photo.path, format='JPEG', quality=85, progressive=True)
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
+    date_created = models.DateTimeField(auto_now=True, db_index=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
