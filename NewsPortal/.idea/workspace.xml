@@ -4,7 +4,9 @@
     <list default="true" id="be034319-c7fc-4513-8891-a1f20443c6d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../FinalJatal/.idea/FinalJatal.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_pages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_pages/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +111,7 @@
       <workItem from="1611941250214" duration="19446000" />
       <workItem from="1611996394157" duration="28679000" />
       <workItem from="1612031144620" duration="342000" />
+      <workItem from="1612031998913" duration="6707000" />
     </task>
     <servers />
   </component>
@@ -148,10 +151,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1611925551946" />
-    <state x="184" y="9" key="SettingsEditor" timestamp="1612011666634">
+    <state x="184" y="9" key="SettingsEditor" timestamp="1612040127474">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1612011666634" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1612040127474" />
     <state x="526" y="149" key="refactoring.ChangeSignatureDialog" timestamp="1611999973288">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
