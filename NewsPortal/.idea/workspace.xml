@@ -3,15 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="be034319-c7fc-4513-8891-a1f20443c6d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../FinalJatal/.idea/FinalJatal.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2c9b2d05-7567-4c7d-a72b-a02fd294bc96.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2c9b2d05-7567-4c7d-a72b-a02fd294bc96.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personalcabinet/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/personalcabinet/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personalcabinet/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/personalcabinet/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personalcabinet/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/personalcabinet/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/vueApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/vueApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/allpost.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/allpost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/cabinetbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/cabinetbase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personal-allpost.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal-allpost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/writepost.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/writepost.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -113,6 +114,7 @@
       <workItem from="1611860288249" duration="7398000" />
       <workItem from="1611917425873" duration="10951000" />
       <workItem from="1611941250214" duration="19446000" />
+      <workItem from="1611996394157" duration="5158000" />
     </task>
     <servers />
   </component>
@@ -124,38 +126,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="439" y="17" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1611925534584" />
-    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1611956462462">
+    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1611999456760">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611956462462" />
-    <state width="1323" height="117" key="GridCell.Tab.0.bottom" timestamp="1611961681880">
+    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611999456760" />
+    <state width="1323" height="168" key="GridCell.Tab.0.bottom" timestamp="1612002457546">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="117" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611961681880" />
+    <state width="1323" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612002457546" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611761343650" />
-    <state width="1323" height="117" key="GridCell.Tab.0.center" timestamp="1611961681880">
+    <state width="1323" height="168" key="GridCell.Tab.0.center" timestamp="1612002457546">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="117" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1611961681880" />
+    <state width="1323" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612002457546" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611761343650" />
-    <state width="1323" height="117" key="GridCell.Tab.0.left" timestamp="1611961681880">
+    <state width="1323" height="168" key="GridCell.Tab.0.left" timestamp="1612002457546">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="117" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1611961681880" />
+    <state width="1323" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612002457546" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611761343650" />
-    <state width="1323" height="117" key="GridCell.Tab.0.right" timestamp="1611961681880">
+    <state width="1323" height="168" key="GridCell.Tab.0.right" timestamp="1612002457546">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="117" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611961681880" />
+    <state width="1323" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612002457546" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611761343650" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1611925551946">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1611925551946" />
-    <state x="184" y="9" key="SettingsEditor" timestamp="1611954981310">
+    <state x="184" y="9" key="SettingsEditor" timestamp="1611999943197">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1611954981310" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1611999943197" />
+    <state x="526" y="149" key="refactoring.ChangeSignatureDialog" timestamp="1611999973288">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="526" y="149" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1611999973288" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -163,7 +169,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/static/js/app.js</url>
           <line>17</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

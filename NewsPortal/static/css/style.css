@@ -1569,7 +1569,7 @@ ul {
     top: 80px;
     right: 30px;
     z-index: 100;
-    /*animation: move 0.5s alternate;*/
+    animation: move 0.5s alternate;
 }
 
 @keyframes move {
@@ -3481,6 +3481,7 @@ ul {
 
 .select {
     width: 100%;
+    padding: 7px 5px;
 }
 
 .write__tag {
@@ -3504,9 +3505,12 @@ ul {
 
 .write__tex {
     width: 100%;
+    min-height: 100px;
+    height: 100px;
     resize: vertical;
     border: 1px solid #BCB9B9;
     background: #FCFBFB;
+    padding: 10px 5px;
 }
 
 .write__post {

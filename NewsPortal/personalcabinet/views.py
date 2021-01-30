@@ -1,8 +1,11 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
 
 # Create your views here.
+from personalcabinet.forms import CreatePost
+from personalcabinet.models import Topic, Post
+
+
 @login_required
 def main_personal(request):
     context = {
@@ -13,9 +16,30 @@ def main_personal(request):
 
 @login_required
 def cabinet_posts(request):
-    return render(request, 'personal-allpost.html')
+    posts = Post.objects.filter(author=request.user)
+    context = {
+        'posts': posts
+    }
+    return render(request, 'personal-allpost.html', context)
 
 
 @login_required
 def write_post(request):
-    return render(request, 'writepost.html')
+    if request.method == 'POST':
+        form = CreatePost(request.POST, request.FILES)
+
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            photo = form.cleaned_data['photo']
+            text = form.cleaned_data['text']
+            author = request.user
+            topic = Topic.objects.get(name=request.POST['topic'])
+
+            Post.objects.create(title=title, photo=photo, text=text, author=author, topic=topic)
+            return redirect('cabinet_posts')
+
+    topics = Topic.objects.all()
+    context = {
+        'topics': topics
+    }
+    return render(request, 'writepost.html', context)
