@@ -5,7 +5,6 @@
     <div class="write__content">
         <div class="pers__allpost-header">
             <div class="pers__allpost-title">Write post</div>
-{#            <div class="pers__allpost-subtitle">your thoughts are a reflection of you</div>#}
         </div>
 
         <div class="write__inf">
@@ -19,9 +18,6 @@
                     <div class="write__photo-block"></div>
                     <div class="write__photo-info">
                         <div class="photo__info-title">Choose title-photo</div>
-{#                        <div class="photo__info-subtitle">if the size is not the default, the photo will automatically#}
-{#                            adjust to the desired size#}
-{#                        </div>#}
                         <div class="helper">
                             <input class="photo__info-btn" type="file" name="photo">
                         </div>
@@ -30,32 +26,12 @@
 
                 <div class="write__select">
                     <div class="write__topic">Choose topic</div>
-                    <select name="topic" id="selectI" class="select">
+                    <select name="topic" id="selectI" class="select select_write">
                         {% for topic in topics %}
                             <option value="{{ topic.name }}" name="topic">{{ topic.name }}</option>
                         {% endfor %}
 
                     </select>
-
-                    {#                    <div class="write__tag">Choose tag</div>#}
-                    {#                    <div class="write__tag-subtitle">Choose your tags tags are mini topics that other users can find#}
-                    {#                        an#}
-                    {#                        your article#}
-                    {#                    </div>#}
-                    {#                    <select name="tag" id="selectId" class="select">#}
-                    {#                        <option value="Cars" name="tags">Cars</option>#}
-                    {#                        <option value="Weather2020" name="tags">Weather2020</option>#}
-                    {#                        <option value="Programs" name="tags">Programs</option>#}
-                    {#                        <option value="Landscapes" name="tags">Landscapes</option>#}
-                    {#                        <option value="Places" name="tags">Places</option>#}
-                    {#                        <option value="Attractions" name="tags">Attractions</option>#}
-                    {#                        <option value="Myths" name="tags">Myths</option>#}
-                    {#                        <option value="Legends" name="tags">Legends</option>#}
-                    {#                        <option value="Stories" name="tags">Stories</option>#}
-                    {#                        <option value="Сonversations" name="tags">Сonversations</option>#}
-                    {#                        <option value="Stars" name="tags">Stars</option>#}
-                    {#                        <option value="Interview" name="tags">Interview</option>#}
-                    {#                    </select>#}
                 </div>
 
                 <div class="write__text">

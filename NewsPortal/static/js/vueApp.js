@@ -34,35 +34,19 @@ let nav = Vue.createApp({
 nav.mount('#app');
 
 
-//Slider
-// let slider = Vue.createApp({
-//     data: () => ({
-//         intro: document.querySelector('#intro'),
-//     }),
-//     methods: {
-//         clickRightBtn(){
-//             console.log(1);
-//             this.intro.slick('slickNext');
-//         },
-//         clickLeftBtn(){
-//             this.intro.slick('slickPrev');
-//         }
-//     },
-// });
-//
-// slider.mount('#introVue');
-
-//Search
+//SearchScroll,ShortText
 let search = Vue.createApp({
     data: () => ({
+        texts: document.querySelectorAll('.posts__text'),
         width: window.innerWidth,
         scrollPosition: 0,
         footerHeight: window.innerHeight,
+        info: [],
     }),
     computed: {
         fixedReady() {
             return this.width > 868 && this.scrollPosition > 550;
-        }
+        },
     },
     methods: {
         updateWidth() {
@@ -75,7 +59,13 @@ let search = Vue.createApp({
     created() {
         window.addEventListener('resize', this.updateWidth);
         window.addEventListener('scroll', this.updateScroll);
-    }
+        axios.get('/api/posts/')
+            .then(function (response) {
+                this.info = response.data;
+                console.log(this.info);
+            });
+    },
+
 });
 
 search.mount('#posts__search-system');

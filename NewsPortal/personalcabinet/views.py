@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-
+from django.core import  serializers
 # Create your views here.
 from personalcabinet.forms import CreatePost
 from personalcabinet.models import Topic, Post
@@ -43,3 +43,11 @@ def write_post(request):
         'topics': topics
     }
     return render(request, 'writepost.html', context)
+
+
+def single_post(request, post_id):
+    post = Post.objects.get(pk=post_id)
+    context = {
+        'post': post,
+    }
+    return render(request, 'singlepost.html', context)
