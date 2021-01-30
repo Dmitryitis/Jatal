@@ -1,3 +1,23 @@
+//Preloader
+let preloader = Vue.createApp({
+    data: () => ({
+        show: true,
+    }),
+    mounted() {
+        if (Boolean(this.show)) {
+            this.showToggle();
+        }
+    },
+    methods: {
+        showToggle() {
+            setTimeout(() => {
+                this.show = false
+            },700);
+        }
+    },
+});
+
+preloader.mount('#preloader');
 //Nav,BurgerMenu
 let nav = Vue.createApp({
     data: () => ({

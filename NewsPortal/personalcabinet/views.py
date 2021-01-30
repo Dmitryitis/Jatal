@@ -46,9 +46,17 @@ def write_post(request):
 def single_post(request, post_id):
     post = Post.objects.get(pk=post_id)
     comments = Comment.objects.filter(post=post_id)
+    if request.user.is_authenticated:
+        context = {
+            'post': post,
+            'comments': comments,
+            'user': request.user
+        }
+        return render(request, 'singlepost.html', context)
     context = {
         'post': post,
         'comments': comments,
+        'user': ''
     }
     return render(request, 'singlepost.html', context)
 

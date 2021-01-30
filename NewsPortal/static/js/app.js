@@ -1,15 +1,15 @@
 $(function () {
 
     //Preloader
-    var body = $('body');
-    $(window).on('load', function () {
-        body.addClass('loaded_hiding');
-
-        window.setTimeout(function () {
-            body.addClass('loaded');
-            body.removeClass('loaded_hiding');
-        }, 1500);
-    });
+    // var body = $('body');
+    // $(window).on('load', function () {
+    //     body.addClass('loaded_hiding');
+    //
+    //     window.setTimeout(function () {
+    //         body.addClass('loaded');
+    //         body.removeClass('loaded_hiding');
+    //     }, 1500);
+    // });
 
     //Slider
     const intro = $("#intro");
