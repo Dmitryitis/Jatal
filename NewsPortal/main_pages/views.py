@@ -26,7 +26,7 @@ def all_posts(request):
                 'topics': topics,
                 'user': request.user
             }
-            shortener_text(posts)
+            shortener_text(posts,60)
             return render(request, 'allpost.html', context)
         elif search != '':
             posts = Post.objects.filter(title=search)
@@ -35,7 +35,7 @@ def all_posts(request):
                 'topics': topics,
                 'user': request.user
             }
-            shortener_text(posts)
+            shortener_text(posts,60)
             return render(request, 'allpost.html', context)
         elif len(topic) != 0:
             posts = Post.objects.filter(topic=topic[0].pk)
@@ -44,10 +44,10 @@ def all_posts(request):
                 'topics': topics,
                 'user': request.user
             }
-            shortener_text(posts)
+            shortener_text(posts,60)
             return render(request, 'allpost.html', context)
     posts = Post.objects.all().order_by('-date_create')
-    shortener_text(posts)
+    shortener_text(posts,60)
     context = {
         'posts': posts,
         'topics': topics,
@@ -74,11 +74,11 @@ def contact(request):
     return render(request, 'contact.html', {'user': ''})
 
 
-def shortener_text(posts):
+def shortener_text(posts, number):
     for post in posts:
         words = post.text.split(" ")
-        if len(words) > 60:
+        if len(words) > number:
             post.text = ''
-            for word in range(60):
+            for word in range(number):
                 post.text += words[word] + ' '
         post.text += '....'

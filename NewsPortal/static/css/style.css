@@ -288,7 +288,26 @@ p {
 
 .intro__bg {
     width: 100%;
+    height: 90vh;
     position: relative;
+}
+
+@media (max-width: 800px) {
+    .intro__bg {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 640px) {
+    .intro__bg {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 420px) {
+    .intro__bg {
+        height: 30vh;
+    }
 }
 
 .slick-slide {
@@ -298,7 +317,7 @@ p {
 .intro__img {
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .intro__inner {
@@ -816,6 +835,22 @@ p {
     -moz-transition: all 1s ease-out;
     -o-transition: all 1s ease-out;
     -webkit-transition: all 1s ease-out;
+}
+
+.popular__img-img {
+    height: 279px;
+}
+
+@media (max-width: 512px) {
+    .popular__img-img {
+        height: 236px;
+    }
+}
+
+@media (max-width: 412px) {
+    .popular__img-img {
+        height: 197px;
+    }
 }
 
 .popular__img:hover {

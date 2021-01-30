@@ -1,8 +1,12 @@
+import random
+
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from auth_jatal.forms import AuthForm, RegistrationForm
+from main_pages.views import shortener_text
+from personalcabinet.models import Post
 
 
 def main_login(request):
@@ -53,10 +57,27 @@ def logout_view(request):
 
 
 def main_page(request):
+    posts = Post.objects.all()
+    last_news = posts.order_by('-date_create')[:3]
+    populars = posts[:2]
+    intro_posts = posts[0:3]
+    trends = posts.order_by('-date_create')[:4]
+    shortener_text(last_news, 40)
+    shortener_text(populars, 40)
     if request.user.is_authenticated:
-        print(request.user)
         context = {
             'user': request.user,
+            'intro_posts': intro_posts,
+            'trends': trends,
+            'populars': populars,
+            'last_news': last_news,
         }
         return render(request, 'index.html', context)
-    return render(request, 'index.html', {'user': ''})
+    context = {
+        'user': '',
+        'intro_posts': intro_posts,
+        'trends': trends,
+        'populars': populars,
+        'last_news': last_news,
+    }
+    return render(request, 'index.html', context)

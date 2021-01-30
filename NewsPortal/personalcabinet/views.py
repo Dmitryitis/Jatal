@@ -1,7 +1,5 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.core import serializers
-# Create your views here.
 from personalcabinet.forms import CreatePost, CreateComment
 from personalcabinet.models import Topic, Post, Comment
 
